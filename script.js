@@ -7,11 +7,24 @@ window.addEventListener('DOMContentLoaded', () => {
     view: document.getElementById('slider'),
   });
 
+  // News item photos
+  const newsPhotos = [
+    { image: '/zidane.jpg', link:'news1.html' },
+    { image: 'news2.jpg', link: 'news2.html' },
+    { image: 'news3.jpg', link: 'news3.html' }
+  ];
+
   // Add slider images
-  const sliderImages = ['slider1.jpg', 'slider2.jpg', 'slider3.jpg'];
-  sliderImages.forEach((image) => {
-    const texture = PIXI.Texture.from(image);
+  newsPhotos.forEach((photo) => {
+    const texture = PIXI.Texture.from(photo.image);
     const sprite = new PIXI.Sprite(texture);
+    sprite.interactive = true; // Enable interactivity
+    sprite.buttonMode = true; // Change cursor to pointer on hover
+
+    // Handle click event
+    sprite.on('click', () => {
+      window.location.href = photo.link; // Redirect to news item
+    });
 
     // Resize sprite to fit the container
     sprite.width = app.screen.width;
