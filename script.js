@@ -9,9 +9,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // News item photos
   const newsPhotos = [
-    { image: '/zidane.jpg', link:'news1.html' },
-    { image: 'news2.jpg', link: 'news2.html' },
-    { image: 'news3.jpg', link: 'news3.html' }
+    { image: '/news1/zidane.jpg', link:'news1.html' },
+    { image: '/news2/nicolasjohnson.jpg', link: 'news2.html' },
+    { image: '/news3/dominik.jpg', link: 'news3.html' }
   ];
 
   // Add slider images
